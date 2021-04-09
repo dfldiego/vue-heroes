@@ -6,17 +6,16 @@
 
 <script>
 
-import Home from './views/Home';
-
+import ListaHeroes from './views/ListaHeroes';
+import DetalleHeroe from './views/DetalleHeroe';
 export default {
   /*eslint-disable*/
   name: 'App',
   components: {
-    Home
+    ListaHeroes,
+    DetalleHeroe,
   },
 }
 </script>
 
-
-<style>
-</style>
+<style></style>

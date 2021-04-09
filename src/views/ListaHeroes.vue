@@ -10,7 +10,7 @@ import Navigation from '@/components/Navigation.vue';
 
 export default {
   /*eslint-disable*/
-  name: 'Home',
+  name: 'ListaHeroes',
   components: {
     Navigation
   }
