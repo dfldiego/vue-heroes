@@ -5,9 +5,9 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item href="#">Home</b-nav-item>
-          <b-nav-item href="#">Heroes DC</b-nav-item>
-          <b-nav-item href="#">Heroes Marvel</b-nav-item>
+          <router-link to="/">Home</router-link>
+          <router-link to="/dc">Heroes DC</router-link>
+          <router-link to="/marvel">Heroes Marvel</router-link>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
@@ -27,3 +27,18 @@
     </b-navbar>
   </div>
 </template>
+
+<style>
+ul a,
+nav a {
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  color: white !important;
+  padding: 5px;
+}
+ul a:hover,
+nav a:hover,
+.active {
+  color: #0056b3 !important;
+}
+</style>

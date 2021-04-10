@@ -10,6 +10,21 @@ const routes = [
     name: "ListaHeroes",
     component: ListaHeroes,
   },
+  {
+    path: "/dc",
+    name: "ListaHeroesDC",
+    component: () => import("../views/ListaHeroes.vue"),
+  },
+  {
+    path: "/marvel",
+    name: "ListaHeroesMarvel",
+    component: () => import("../views/ListaHeroes.vue"),
+  },
+  {
+    path: "/detalle-heroe/:id",
+    name: "DetalleHeroe",
+    component: () => import("../views/DetalleHeroe.vue"),
+  },
 ];
 
 const router = new VueRouter({
