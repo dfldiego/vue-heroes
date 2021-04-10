@@ -6,7 +6,7 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/todos",
+    path: "/",
     name: "ListaHeroes",
     component: ListaHeroes,
   },
