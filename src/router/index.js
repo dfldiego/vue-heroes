@@ -6,17 +6,17 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
+    path: "/heroes",
     name: "ListaHeroes",
     component: ListaHeroes,
   },
   {
-    path: "/dc",
+    path: "/heroes/:dc",
     name: "ListaHeroesDC",
     component: () => import("../views/ListaHeroes.vue"),
   },
   {
-    path: "/marvel",
+    path: "/heroes/:marvel",
     name: "ListaHeroesMarvel",
     component: () => import("../views/ListaHeroes.vue"),
   },
@@ -25,6 +25,7 @@ const routes = [
     name: "DetalleHeroe",
     component: () => import("../views/DetalleHeroe.vue"),
   },
+  { path: "/", redirect: "/heroes" },
 ];
 
 const router = new VueRouter({
