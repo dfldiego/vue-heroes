@@ -5,9 +5,11 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <router-link to="/">Home</router-link>
-          <router-link to="/dc">Heroes DC</router-link>
-          <router-link to="/marvel">Heroes Marvel</router-link>
+          <router-link to="/todos" active-class="active">Home</router-link>
+          <router-link to="/dc" active-class="active">Heroes DC</router-link>
+          <router-link to="/marvel" active-class="active"
+            >Heroes Marvel</router-link
+          >
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
