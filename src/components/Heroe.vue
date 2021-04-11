@@ -18,7 +18,7 @@
 
     <div class="row">
       <div class="col">
-        <router-link :to="'/detalle/' + heroeParam.id">
+        <router-link :to="'/detalle-heroe/' + heroeParam.id">
           <button>VER MÁS</button>
         </router-link>
       </div>

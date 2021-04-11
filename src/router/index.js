@@ -1,6 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import ListaHeroes from "../views/ListaHeroes.vue";
 
 Vue.use(VueRouter);
 
@@ -8,7 +7,7 @@ const routes = [
   {
     path: "/heroes",
     name: "ListaHeroes",
-    component: ListaHeroes,
+    component: () => import("../views/ListaHeroes.vue"),
   },
   {
     path: "/heroes/:dc",
