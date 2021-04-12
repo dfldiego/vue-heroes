@@ -5,7 +5,9 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <router-link to="/heroes">Home</router-link>
+          <router-link to="/heroes" active-class="active" exact
+            >Home</router-link
+          >
           <router-link to="/heroes/dc" active-class="active"
             >Heroes DC</router-link
           >
