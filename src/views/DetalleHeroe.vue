@@ -13,9 +13,11 @@
               class="rounded-0 tarjeta-img w-50"
             ></b-card-img>
             <br />
-            <button class="btn btn-primary mt-4 mb-4 active">
-              <router-link to="/heroes">Volver</router-link>
-            </button>
+            <router-link to="/heroes">
+              <button class="btn btn-outline-primary mt-4 mb-4 btn-volver">
+                Volver
+              </button>
+            </router-link>
           </b-col>
           <b-col class="col-md-6">
             <b-card-title>{{ heroeEncontrado.nombre }}</b-card-title>

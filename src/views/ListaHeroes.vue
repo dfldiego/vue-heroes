@@ -6,7 +6,7 @@
       <div class="doscolumnas_row">
         <Heroe
           :heroeParam="heroe"
-          v-for="heroe in dataHeroes"
+          v-for="heroe in dataHeroesByCasa"
           :key="heroe.id"
         />
       </div>
@@ -30,10 +30,35 @@ export default {
   data() {
     return {
       dataHeroes: heroesJson,
+      dataHeroesByCasa: [],
     };
   },
-  mounted() {},
-  methods: {},
+  mounted() {
+    this.getHeroesByCasa();
+  },
+  computed: {
+    getHeroesByCasa() {
+      this.dataHeroesByCasa = [];
+      let casa = this.$route.params.dc;
+      if (casa == "dc") {
+        for (const heroe of this.dataHeroes) {
+          if (heroe.casa == "DC") {
+            this.dataHeroesByCasa.push(heroe);
+          }
+        }
+      } else if (casa == "marvel") {
+        for (const heroe of this.dataHeroes) {
+          if (heroe.casa == "Marvel") {
+            this.dataHeroesByCasa.push(heroe);
+          }
+        }
+      } else {
+        for (const heroe of this.dataHeroes) {
+          this.dataHeroesByCasa.push(heroe);
+        }
+      }
+    },
+  },
 };
 </script>
 
