@@ -13,7 +13,7 @@
               class="rounded-0 tarjeta-img w-50"
             ></b-card-img>
             <br />
-            <router-link to="/heroes">
+            <router-link to="/heroes" @click="anterior">
               <button class="btn btn-outline-primary mt-4 mb-4 btn-volver">
                 Volver
               </button>
@@ -63,6 +63,9 @@ export default {
         (heroe) => heroe.id === paramId
       );
       console.log(this.heroeEncontrado);
+    },
+    anterior() {
+      this.$router.go(-1);
     },
   },
 };

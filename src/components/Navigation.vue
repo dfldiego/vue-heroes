@@ -23,8 +23,13 @@
               size="sm"
               class="mr-sm-2"
               placeholder="Buscar"
+              v-model="textoBuscador"
             ></b-form-input>
-            <b-button size="sm" class="my-2 my-sm-0" type="submit"
+            <b-button
+              size="sm"
+              class="my-2 my-sm-0"
+              @click="updateSearch"
+              v-model="textoBuscador"
               >Buscar</b-button
             >
           </b-nav-form>
@@ -33,6 +38,33 @@
     </b-navbar>
   </div>
 </template>
+
+<script>
+export default {
+  /*eslint-disable*/
+  name: "Navigation",
+  data() {
+    return {
+      textoBuscador: "",
+    };
+  },
+  mounted() {
+    console.log("this.textoBuscadorMOunted", this.textoBuscador);
+    if (this.textoBuscador !== "") {
+      console.log("this.textoBuscadorMOuntedEntrado", this.textoBuscador);
+      this.updateSearch();
+    }
+  },
+  methods: {
+    updateSearch() {
+      console.log("textoBuscadorDesdeHijo", this.textoBuscador);
+      this.$emit("getHeroesByBuscador", {
+        textoBuscador: this.textoBuscador,
+      });
+    },
+  },
+};
+</script>
 
 <style>
 ul a,
