@@ -8,7 +8,7 @@
           <b-col class="col-md-6">
             <!-- Columna con Imagen y Descripcion-->
             <b-card-img
-              :src="require('../assets/img/' + heroeEncontrado.img)"
+              :src="getIconPath(heroeEncontrado.img)"
               alt="Image"
               class="rounded-0 tarjeta-img w-50"
             ></b-card-img>
@@ -58,14 +58,15 @@ export default {
   methods: {
     findOne() {
       const paramId = this.$route.params.id;
-      console.log(paramId);
       this.heroeEncontrado = this.dataHeroes.find(
         (heroe) => heroe.id === paramId
       );
-      console.log(this.heroeEncontrado);
     },
     anterior() {
       this.$router.go(-1);
+    },
+    getIconPath(iconName) {
+      return iconName ? require(`../assets/img/${iconName}`) : "";
     },
   },
 };

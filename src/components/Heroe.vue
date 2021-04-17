@@ -7,7 +7,7 @@
 
     <div class="row">
       <div class="col">
-        <img :src="require('@/assets/img/' + heroeParam.img)" alt="" />
+        <img :src="getIconPath(heroeParam.img)" alt="Imagen" />
       </div>
       <div class="col">
         <ul v-for="poder in heroeParam.poderes" :key="poder">
@@ -31,6 +31,11 @@
 export default {
   name: "Heroe",
   props: ["heroeParam"],
+  methods: {
+    getIconPath(iconName) {
+      return iconName ? require(`../assets/img/${iconName}`) : "";
+    },
+  },
 };
 </script>
 

@@ -5,7 +5,7 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/heroes",
+    path: "/heroes/:param?",
     name: "ListaHeroes",
     component: () => import("../views/ListaHeroes.vue"),
   },

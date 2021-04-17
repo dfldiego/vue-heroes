@@ -18,18 +18,14 @@
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
-          <b-nav-form>
+          <b-nav-form @submit.prevent="search()">
             <b-form-input
               size="sm"
               class="mr-sm-2"
-              placeholder="Buscar"
-              v-model="textoBuscador"
+              placeholder="Buscar por nombre,bio,poderes"
+              v-model="parametroBuscador"
             ></b-form-input>
-            <b-button
-              size="sm"
-              class="my-2 my-sm-0"
-              @click="updateSearch"
-              v-model="textoBuscador"
+            <b-button size="sm" class="my-2 my-sm-0" type="submit"
               >Buscar</b-button
             >
           </b-nav-form>
@@ -45,22 +41,17 @@ export default {
   name: "Navigation",
   data() {
     return {
-      textoBuscador: "",
+      parametroBuscador: "",
     };
   },
-  mounted() {
-    console.log("this.textoBuscadorMOunted", this.textoBuscador);
-    if (this.textoBuscador !== "") {
-      console.log("this.textoBuscadorMOuntedEntrado", this.textoBuscador);
-      this.updateSearch();
-    }
-  },
+  mounted() {},
   methods: {
-    updateSearch() {
-      console.log("textoBuscadorDesdeHijo", this.textoBuscador);
-      this.$emit("getHeroesByBuscador", {
-        textoBuscador: this.textoBuscador,
-      });
+    search() {
+      if (this.parametroBuscador.length > 0) {
+        window.location.href = "/heroes/" + this.parametroBuscador;
+      } else {
+        window.location.href = "/heroes/";
+      }
     },
   },
 };
